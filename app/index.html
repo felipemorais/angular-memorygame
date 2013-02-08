@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="minimaliaMemoriaApp">
+  <head lang="en">
+   <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title></title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="styles/main.css" />
+  </head> 
+  <body ng-controller="Cards">
+    <div class="hero-unit">
+      <h1>Minimalia Quiz!</h1>
+      <p>Let's rock!</p>
+      <ul class="card-list" ng-card>
+          <li class="card-item card" ng-repeat="card in cards;" ng-click="selectItem( card );" ng-class="{'is-selected' : card.isselected, 'is-opened': card.isopened }"><img src="{{card.img}}" alt=""></li>
+      </ul>
+    </div>
+
+    <script src="scripts/vendor/angular.js"></script>
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/minimalia-memoria.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>
