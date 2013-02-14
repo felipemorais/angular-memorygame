@@ -12,14 +12,19 @@
     <div id="main">
       <header>
         <h1>Angular MemoryGame!</h1>
+        <section id="stats">
+          <p>Attempts: {{attempts}} - Found: {{ opened }} / {{ cards.length / 2 }}</p>
+          <button type="button" ng-click="reset();">Retry</button>
+        </section>
       </header>
-      <section>
-        <p>Attempts: {{attempts}} - Found: {{ opened }} / {{ cards.length / 2 }}</p>
-        <input type="button" ng-click="reset();" value="Retry">
+      <section id="game">
         <ul class="card-list" ng-card>
             <li class="card-item card" ng-repeat="card in cards;" ng-click="selectItem( card );" ng-class="{'is-selected' : card.isselected, 'is-opened': card.isopened }"><img ng-src="{{card.img}}" alt=""></li>
         </ul>
       </section>
+      <footer>
+        <p><strong>Memory game</strong> is an experimental app implemented with <a href="http://angularjs.org">AngularJS</a> by <a href="http://github.com/felipemorais">Felipe Morais</a> - <a href="https://github.com/felipemorais/angular-memorygame">Fork on GitHub</a></p>
+      </footer>
     </div>
 
     <script src="scripts/vendor/angular.js"></script>
