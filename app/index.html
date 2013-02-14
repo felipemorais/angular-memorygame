@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html ng-app="minimaliaMemoriaApp">
   <head lang="en">
-   <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title></title>
-        <meta name="description" content=""/>
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="styles/main.css" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Angular MemoryGame!</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles/main.css" />  
   </head> 
   <body ng-controller="Cards">
-    <div class="hero-unit">
-        <h1>Minimalia Quiz!</h1>
-        <p>Let's rock!</p>
-        <p>Tentativas: {{tries}} - Encontrados: {{ opened }} / {{ cards.length / 2 }}</p>
-        <input type="button" ng-click="reset();" value="Recomeçar">
+    <div id="main">
+      <header>
+        <h1>Angular MemoryGame!</h1>
+      </header>
+      <section>
+        <p>Attempts: {{attempts}} - Found: {{ opened }} / {{ cards.length / 2 }}</p>
+        <input type="button" ng-click="reset();" value="Retry">
         <ul class="card-list" ng-card>
             <li class="card-item card" ng-repeat="card in cards;" ng-click="selectItem( card );" ng-class="{'is-selected' : card.isselected, 'is-opened': card.isopened }"><img ng-src="{{card.img}}" alt=""></li>
         </ul>
+      </section>
     </div>
 
     <script src="scripts/vendor/angular.js"></script>
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/minimalia-memoria.js"></script>
     <!-- endbuild -->
-
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-38515217-1");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
   </body>
 </html>

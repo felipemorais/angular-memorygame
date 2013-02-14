@@ -54,6 +54,7 @@ describe('Controller: Cards', function() {
 
     scope.selectItem( card1 );
     scope.selectItem( card2 );
+    
     expect( card1.isopened ).toEqual( true );
     expect( card2.isopened ).toEqual( true );
   });

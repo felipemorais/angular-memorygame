@@ -70,12 +70,12 @@ var minimaliaMemoriaApp = angular.module('minimaliaMemoriaApp' , [] )
   /* Scopes */
 
   $scope.cards = sortCards();
-  $scope.tries = 0;
+  $scope.attempts = 0;
   $scope.opened = 0;
 
   $scope.reset =function(){
     $scope.cards = sortCards();
-    $scope.tries = 0;
+    $scope.attempts = 0;
     $scope.opened = 0;
   };
 
@@ -99,7 +99,7 @@ var minimaliaMemoriaApp = angular.module('minimaliaMemoriaApp' , [] )
         $scope.opened++;
       }
 
-      $scope.tries++;
+      $scope.attempts++;
 
       // refactor timeout
       setTimeout( function() {
@@ -107,7 +107,7 @@ var minimaliaMemoriaApp = angular.module('minimaliaMemoriaApp' , [] )
       }, 500 );
 
       if( isFinished() ) {
-        alert("venceu")
+        alert("you win!")
       }
 
     }

@@ -15,30 +15,6 @@ module.exports = function( grunt ) {
       dir: 'app/components'
     },
 
-    // Coffee to JS compilation
-    coffee: {
-      compile: {
-        files: {
-          'app/scripts/*.js': 'app/scripts/**/*.coffee',
-          'test/spec/*.js': 'test/spec/**/*.coffee'
-        }
-      }
-    },
-
-    // compile .scss/.sass to .css using Compass
-    compass: {
-      dist: {
-        // http://compass-style.org/help/tutorials/configuration-reference/#configuration-properties
-        options: {
-          css_dir: 'temp/styles',
-          sass_dir: 'app/styles',
-          images_dir: 'app/images',
-          javascripts_dir: 'temp/scripts',
-          force: true
-        }
-      }
-    },
-
     // generate application cache manifest
     manifest:{
       dest: ''
@@ -46,16 +22,6 @@ module.exports = function( grunt ) {
 
     // default watch configuration
     watch: {
-      coffee: {
-        files: 'app/scripts/**/*.coffee',
-        tasks: 'coffee reload'
-      },
-      compass: {
-        files: [
-          'app/styles/**/*.{scss,sass}'
-        ],
-        tasks: 'compass reload'
-      },
       reload: {
         files: [
           'app/*.html',
@@ -149,20 +115,6 @@ module.exports = function( grunt ) {
     // Optimizes JPGs and PNGs (with jpegtran & optipng)
     img: {
       dist: '<config:rev.img>'
-    },
-
-    // rjs configuration. You don't necessarily need to specify the typical
-    // `path` configuration, the rjs task will parse these values from your
-    // main module, using http://requirejs.org/docs/optimization.html#mainConfigFile
-    //
-    // name / out / mainConfig file should be used. You can let it blank if
-    // you're using usemin-handler to parse rjs config from markup (default
-    // setup)
-    rjs: {
-      // no minification, is done by the min task
-      optimize: 'none',
-      baseUrl: './scripts',
-      wrap: true
     }
   });
 
